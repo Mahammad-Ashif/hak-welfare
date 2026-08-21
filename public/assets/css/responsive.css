@@ -1,0 +1,215 @@
+/* ==========================================================================
+   H.A.K. Welfare Society - Mobile & Cross-Device Responsive Stylesheet
+   File: responsive.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL CONTAINER & VIEWPORT NORMALIZATION
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for long text / IDs breaking out of containers */
+.break-words-custom,
+.font-mono {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   2. STICKY NAVBAR CROSS-BROWSER RULES
+   -------------------------------------------------------------------------- */
+#navbar {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 40 !important;
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   3. TOUCH-FRIENDLY INTERACTIVE TARGETS & ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+button,
+a.btn,
+.mobile-nav-link,
+[role="button"] {
+    touch-action: manipulation;
+}
+
+/* Prevent auto-zoom on iPhone / iOS safari when focusing inputs */
+@media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="search"],
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE BREAKPOINT: LARGE DESKTOP & TABLETS (max-width: 1279px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1279px) {
+    .glass-header {
+        height: auto;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE BREAKPOINT: TABLETS & SMALL LAPTOPS (max-width: 1023px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+    /* Hero section adjustments */
+    #hero-slider {
+        min-height: 520px;
+    }
+
+    .hero-slide > div {
+        padding-top: 3.5rem;
+        padding-bottom: 5.5rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE BREAKPOINT: MOBILE PHONES & PHABLETS (max-width: 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    /* Fluid Heading Typography */
+    h1, .hero-heading {
+        font-size: clamp(1.65rem, 6.5vw, 2.25rem) !important;
+        line-height: 1.15 !important;
+    }
+
+    h2 {
+        font-size: clamp(1.35rem, 5.5vw, 1.85rem) !important;
+        line-height: 1.2 !important;
+    }
+
+    h3 {
+        font-size: clamp(1.15rem, 4.5vw, 1.45rem) !important;
+    }
+
+    /* Section padding on mobile */
+    section {
+        padding-top: 2.75rem !important;
+        padding-bottom: 2.75rem !important;
+    }
+
+    /* Hero section slide text & buttons */
+    #hero-slider {
+        min-height: 560px !important;
+    }
+
+    .hero-slide {
+        background-position: center top !important;
+    }
+
+    .hero-slide > div {
+        padding-top: 2.25rem !important;
+        padding-bottom: 6.5rem !important;
+    }
+
+    .hero-slide p {
+        font-size: 0.925rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .hero-slide .flex-wrap.gap-4 a {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 0.75rem 1.25rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    /* 4 Key stats cards ribbon on mobile */
+    .-mt-7 {
+        margin-top: -1.25rem !important;
+    }
+
+    /* Reach & work location cards */
+    .state-badge {
+        font-size: 0.75rem !important;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. RESPONSIVE BREAKPOINT: EXTRA SMALL PHONES (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .max-w-7xl {
+        padding-left: 0.875rem !important;
+        padding-right: 0.875rem !important;
+    }
+
+    /* Floating Back-to-Top button position */
+    #back-to-top {
+        bottom: 1rem !important;
+        right: 1rem !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+
+    /* Modal padding & dimensions */
+    #qr-modal-content {
+        max-width: calc(100vw - 1.25rem) !important;
+        margin: auto !important;
+    }
+
+    #qr-modal-content .relative.w-48,
+    #qr-modal-content .relative.w-56,
+    #qr-modal-content .relative.w-60 {
+        width: 11rem !important;
+        height: 11rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCESSIBILITY & PERFORMANCE
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
